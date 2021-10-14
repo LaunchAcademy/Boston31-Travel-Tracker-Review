@@ -19,7 +19,7 @@ From your challenges directory, run the following:
 et get travel-tracker
 cd travel-tracker
 yarn install
-yarn run start
+yarn run dev:client
 ```
 
 Open your browser and navigate to `http://localhost:8080/`. There should be no errors in your console!
