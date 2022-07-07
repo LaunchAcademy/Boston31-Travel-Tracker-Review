@@ -1,44 +1,38 @@
 import React, { useState } from 'react';
 
-import Place from './Place';
+import Destination from './Destination';
 
 const App = (props) => {
-  // debugger
+// debugger
   const [selectedPlaceId, setSelectedPlaceId] = useState(null)
 
-  const placesData = props.data.places;
-  const favoritePlaceId = props.data.favoritePlaceId;
-  // const { favoritePlaceId } = props.data
-
-  const placesComponents = placesData.map((place) => {
-    // debugger
-    // <li>{place.name}</li>
+  const placesArray = props.data.places.map((place) => {
+    // console.log(place)
     return (
-      <Place
+      <Destination
         key={place.id}
         place={place}
-        selectedPlaceId={selectedPlaceId}
         setSelectedPlaceId={setSelectedPlaceId}
+        selectedPlaceId={selectedPlaceId}
+        // favoritePlaceId={props.data.favoritePlaceId}
       />
     )
   })
-  // console.log(selectedPlace);
+console.log("state", selectedPlaceId)
 
-  let secretMessage;
-  if (selectedPlaceId === favoritePlaceId) {
-    secretMessage = <div>What a beauty!</div>
+  let message;
+  if (props.data.favoritePlaceId === selectedPlaceId) {
+    message = <p>What a beauty!</p>
   }
 
-  // debugger
   return (
     <div id="wishlist-div">
       <div className="grid-container">
         <div className="small-12 text-center">
           <h3>Wanderlust Wishlist</h3>
-          
-          {placesComponents}
-          
-          {secretMessage}
+          {placesArray}
+
+          {message}
         </div>
       </div>
     </div>
