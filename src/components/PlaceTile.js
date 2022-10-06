@@ -4,19 +4,26 @@ const PlaceTile = (props) => {
     // debugger
 
     const clickPlace = () => {
-    //    i need to change state to the id of this placetile
-        props.setSelectedPlaceId(props.id)
+        if (props.selectedPlaceIds.includes(props.id)) {
+            const filteredPlaceIds = props.selectedPlaceIds.filter((placeId) => {
+                return placeId !== props.id
+            })
+            props.setSelectedPlaceIds(filteredPlaceIds)
+        } else {
+            let newPlaceIds = props.selectedPlaceIds.concat(props.id)
+            props.setSelectedPlaceIds(newPlaceIds)
+        }
     }
 
-    // placeClassName will need to change based on if this tile was clicked
     let placeClassName = ""
-    if (props.selectedPlaceId === props.id) {
+    if (props.selectedPlaceIds.includes(props.id)) {
         placeClassName = "done"
     }
 
     return (
         <div className={placeClassName} onClick={clickPlace}>
             {props.name}
+
         </div>
     )
 }

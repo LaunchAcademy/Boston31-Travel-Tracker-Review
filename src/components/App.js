@@ -5,7 +5,9 @@ import PlaceTile from './PlaceTile';
 const App = (props) => {
   // debugger
 
-  const [selectedPlaceId, setSelectedPlaceId] = useState(null)
+  const [selectedPlaceIds, setSelectedPlaceIds] = useState([])
+
+  console.log(selectedPlaceIds)
   
   const placeListItems = props.data.places.map((placeObject) => {
 
@@ -14,16 +16,18 @@ const App = (props) => {
         key={placeObject.id}
         name={placeObject.name}
         id={placeObject.id}
-        selectedPlaceId={selectedPlaceId}
-        setSelectedPlaceId={setSelectedPlaceId}
+        selectedPlaceIds={selectedPlaceIds}
+        setSelectedPlaceIds={setSelectedPlaceIds}
       />
     )
   })
 
   let favoritePlaceMessage = ""
 
-  if (selectedPlaceId === props.data.favoritePlaceId) {
-    favoritePlaceMessage = "What a beauty!"
+  if (selectedPlaceIds.includes(props.data.favoritePlaceId)) {
+    favoritePlaceMessage = <p className="callout beauty">
+      What a beauty!
+    </p>
   }
 
   return (
@@ -32,7 +36,8 @@ const App = (props) => {
         <div className="small-12 text-center">
           <h3>Wanderlust Wishlist</h3>
           {placeListItems}
-          {favoritePlaceMessage}
+            {favoritePlaceMessage}
+          
         </div>
       </div>
     </div>
