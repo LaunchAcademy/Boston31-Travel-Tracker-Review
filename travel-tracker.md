@@ -1,3 +1,7 @@
+# PLEASE READ
+
+For this specific CLINIC version of the codebase, please refer to the provided `README.md` for instructions. This is a monolith version of the Travel Tracker assignment.
+
 ## Introduction
 
 You've learned a lot! At this point, you should be familiar with:
@@ -38,6 +42,7 @@ NOTE: Do not worry about the ability to click on the destination again to get ri
 - When a user selects any other destination, the message "What a beauty!" should not be present on the page.
 
 ### Part 3 (Bonus story)
+
 - When a user clicks on a destination that is currently selected and has a strikethrough, the strikethrough should disappear.
 - Allow a user to select multiple destinations to strike off their list.
 

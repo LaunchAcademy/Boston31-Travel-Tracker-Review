@@ -1,28 +1,21 @@
 {
-  "name": "travel-tracker",
-  "version": "1.0.0",
-  "description": "",
-  "main": "webpack.config.js",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
   "scripts": {
-    "dev:client": "node_modules/.bin/webpack-dev-server --host 0.0.0.0 --hot",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:client": "yarn workspace travel-tracker-client build",
+    "dev": "yarn workspace travel-tracker-server dev",
+    "dev:debug": "yarn workspace travel-tracker-server dev:debug",
+    "dev:server:debug": "PORT=4000 yarn workspace travel-tracker-server dev:debug",
+    "dev:server": "PORT=4000 yarn workspace travel-tracker-server dev",
+    "dev:client": "yarn workspace travel-tracker-client dev",
+    "heroku-postbuild": "yarn workspace travel-tracker-client build",
+    "start": "yarn workspace travel-tracker-server start"
   },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^0.26.2",
-    "node-sass": "8.0.0",
-    "sass-loader": "^6.0.2",
-    "style-loader": "^0.13.2",
-    "webpack": "~2.3.1",
-    "webpack-dev-server": "~2.4.2"
-  },
-  "dependencies": {
-    "react": "~16.8.0",
-    "react-dom": "~16.8.0"
+  "engines": {
+    "node": "^16.18"
   }
 }

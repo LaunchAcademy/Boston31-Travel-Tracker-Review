@@ -3,45 +3,45 @@ const data = {
   places: [
     {
       id: 1,
-      name: "Peru"
+      name: "Peru",
     },
     {
       id: 2,
-      name: "England"
+      name: "England",
     },
     {
       id: 3,
-      name: "South Africa"
+      name: "South Africa",
     },
     {
       id: 4,
-      name: "India"
+      name: "India",
     },
     {
       id: 5,
-      name: "Australia"
+      name: "Australia",
     },
     {
       id: 6,
-      name: "Jamaica"
+      name: "Jamaica",
     },
     {
       id: 7,
-      name: "Cuba"
+      name: "Cuba",
     },
     {
       id: 8,
-      name: "Germany"
+      name: "Germany",
     },
     {
       id: 9,
-      name: "The Netherlands"
+      name: "The Netherlands",
     },
     {
       id: 10,
-      name: "Israel"
-    }
-  ]
-};
+      name: "Israel",
+    },
+  ],
+}
 
-export default data;
+export default data
